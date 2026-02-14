@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ShoeBox Discounts Page</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <title>Shoe Deals - Raw Data View</title>
+</head>
+<body>
+    <header>
+    <div class="logo">
+        <!-- Add link to domain after deploying the app -->
+        <img src="static\images\ShowBox_Logo.png" alt="ShoeBox Logo">
+        <span>ShoeBox</span>
+        
+    </div>
+    </header>
+    <section class = "intro">
+        <h1>Welcome to ShoeBox - Your Ultimate Shoe Deals Hub!</h1>
+        <p>Discover the best shoe deals from top retailers like Nike and Bash. We scour the web to bring you the latest discounts, so you can step up your shoe game without breaking the bank. Browse our collection of discounted shoes and find your perfect pair today!</p>
+        <div class = "brand-logos">
+            <img src="static\images\NikeLogo.svg" alt="Nike Logo" style="max-width:150px; margin-right:20px;">
+            <img src="static\images\BashLogo.png" alt="Bash Logo" style="max-width:150px;">
+        </div>
+    </section>
+    <!-- Loops through the dict passed to index.html from the app.py. -->
+    <!-- Its possible due to the jinja2 templating engine being used in Flask. Since HTML is static, the server-side lang (Python) takes data and renders it dynamically in the HTML template. -->
+    <section class = "product-grid">
+        {% for shoe in shoes %}
+        <div class = "product-card" style="border:1px solid #ccc; margin:10px; padding:10px;">
+            <!-- Display each field with a label -->
+            <a href = "{{shoe.link}}" target = "_blank">
+                <img src="{{shoe.image}}" alt="{{shoe.name}}" style="max-width:400px;">
+                <span>{{ shoe.name }}</span>
+                <p>Sale Price: {{ shoe.sale_price }}</p>
+                <p>Original Price: {{ shoe.original_price }}</p>
+                <p>Discount: {{ shoe.discount }}</p>
+                <p>Source: {{ shoe.source }}</p>
+            </a>  
+        </div>
+        {% endfor %}
+    </section>
+    <footer>
+        <div class = 'CompanyInfo'>
+            <p>&copy; 2024 ShoeBox. All rights reserved.</p>
+            <p><a href="https://wa.me/1234567890" target="_blank">WhatsApp Us</a></p>
+        </div>
+        <div class = 'AuthorInfo'>
+            <p>Created by: Tlhokomelo Mohobane</p>
+        </div>
+    </footer>
+</body>
+</html>

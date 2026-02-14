@@ -1,0 +1,195 @@
+:root {
+    --primary-purple: #4b2a63;
+    --secondary-purple: #6a3f85;
+    --gold: #d4af6a;
+    --soft-gold: #f3d9a6;
+    --background: #fdf7f3;
+    --card-bg: #ffffff;
+    --text-dark: #2e1c3b;
+    --text-muted: #6b5c75;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Segoe UI", Arial, sans-serif;
+    background-color: var(--background);
+    color: var(--text-dark);
+    line-height: 1.6;
+}
+
+
+header {
+    padding: 20px 60px;
+    border-bottom: 1px solid #eee;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.logo img {
+    width: 150px;
+    height: auto;
+}
+
+.logo span {
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--primary-purple);
+}
+
+
+.intro {
+    text-align: center;
+    padding: 60px 20px 40px;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.intro h1 {
+    font-size: 2.2rem;
+    color: var(--primary-purple);
+    margin-bottom: 15px;
+}
+
+.intro p {
+    color: var(--text-muted);
+    font-size: 1.05rem;
+    margin-bottom: 30px;
+}
+
+.brand-logos {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+}
+
+
+.product-grid {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 40px 20px 60px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 30px;
+}
+
+
+.product-card {
+    background-color: var(--card-bg);
+    border-radius: 16px;
+    padding: 20px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.06);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.product-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+}
+
+.product-card a {
+    text-decoration: none;
+    color: inherit;
+    display: block;
+}
+
+.product-card img {
+    width: 100%;
+    height: 180px;
+    object-fit: contain;
+    margin-bottom: 15px;
+}
+
+.product-card span {
+    display: block;
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--primary-purple);
+    margin-bottom: 8px;
+}
+
+.product-card p {
+    font-size: 0.95rem;
+    color: var(--text-muted);
+    margin-bottom: 4px;
+}
+
+.product-card p:nth-child(4) {
+    text-decoration: line-through;
+    color: #9b8ca5;
+}
+
+/* Discount badge */
+.product-card p:nth-child(5) {
+    display: inline-block;
+    margin-top: 8px;
+    background-color: var(--soft-gold);
+    color: #6b4b1f;
+    padding: 4px 10px;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 600;
+}
+
+
+footer {
+    background-color: #3b1f52; /* dark purple */
+    color: #f4e9f9;
+    padding: 30px 60px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.CompanyInfo p,
+.AuthorInfo p {
+    font-size: 0.9rem;
+    color: #e2cfee;
+}
+
+.CompanyInfo a {
+    color: #25d366; 
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.CompanyInfo a:hover {
+    text-decoration: underline;
+}
+
+/* Footer responsive */
+@media (max-width: 768px) {
+    footer {
+        flex-direction: column;
+        text-align: center;
+        gap: 10px;
+    }
+}
+
+
+@media (max-width: 768px) {
+    header,
+    footer {
+        padding: 20px;
+    }
+
+    .intro h1 {
+        font-size: 1.8rem;
+    }
+
+    footer {
+        flex-direction: column;
+        gap: 10px;
+        text-align: center;
+    }
+}
