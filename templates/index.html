@@ -37,6 +37,12 @@
                 <p>Original Price: {{ shoe.original_price }}</p>
                 <p>Discount: {{ shoe.discount }}</p>
                 <p>Source: {{ shoe.source }}</p>
+                <!-- ShoeBox price = retailer sale price + runner fee -->
+                <!-- Runner fee covers the dropshipper's service and delivery handling -->
+                <div class="shoebox-price-block">
+                    <p class="shoebox-price">ShoeBox Price: {{ shoe.shoebox_price }}</p>
+                    <p class="runner-fee-note">Includes R{{ shoe.runner_fee }} runner fee</p>
+                </div>
             </a>  
         </div>
         {% endfor %}

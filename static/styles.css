@@ -250,3 +250,28 @@ footer {
         font-size: 0.85rem;
     }
 }
+
+
+/* ShoeBox price block — visually separated from the retailer pricing above */
+.shoebox-price-block {
+    background-color: var(--primary-purple);
+    color: white;
+    border-radius: 10px;
+    margin-top: 10px;
+    padding: 10px;
+}
+
+/* ShoeBox price = retailer sale price + runner fee */
+.shoebox-price {
+    font-size: 1.05rem;
+    font-weight: 700;
+    color: white;
+    margin-bottom: 3px;
+}
+
+/* Small note explaining the runner fee */
+.runner-fee-note {
+    font-size: 0.8rem;
+    color: white;
+    font-style: italic;
+}

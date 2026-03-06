@@ -28,7 +28,9 @@ def index():
         'Original price': 'original_price',
         'Discount percentage': 'discount',
         'More info': 'link',
-        'Shoe picture': 'image'
+        'Shoe picture': 'image',
+        'runner_fee': 'runner_fee',       
+        'shoebox_price': 'shoebox_price'  
     })
 
     # Add source (Nike or Bash) for easy redirecting
